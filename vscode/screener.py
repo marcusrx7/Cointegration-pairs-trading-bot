@@ -1,18 +1,17 @@
 import pandas as pd
 import yfinance as yf
 import sys
-from typing import Literal
 
 # List of available sectors
-sector_names = Literal[
+sector_names = [
     'technology', 'healthcare', 'financial-services', 'consumer-cyclical', 
     'industrials', 'communication-services', 'consumer-defensive', 
     'energy', 'utilities', 'real-estate', 'basic-materials'
 ]
 
 class Sectors:
-    def __init__(self, name: sector_names):
-        if type(name) == sector_names:
+    def __init__(self, name):
+        if name in sector_names:
             self.name = name
             print(self.name)
         else:
