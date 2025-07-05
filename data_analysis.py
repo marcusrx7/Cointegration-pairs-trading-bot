@@ -110,7 +110,7 @@ class CointegrationData:
         print(f"saving cointegration data to: {path}")
         self.data.to_pickle(path)
 
-        fig_dir = os.path.join("data", "pairs", "spread")
+        fig_dir = os.path.join("data", "pairs", "spread_plots")
         os.makedirs(fig_dir, exist_ok=True)
         for idx, row in self.data.iterrows():
             s1, s2 = row.Stock1, row.Stock2
